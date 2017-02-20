@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class ControllerTest
 {
-    Controller ctrl;
+    private Controller ctrl;
 
     @org.junit.Before
     public void setUp() throws Exception
