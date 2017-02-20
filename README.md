@@ -1,5 +1,3 @@
 # TEST_CASE_DESIGN – STUDY_POINT_EXERCISES
 
-_Færdig med EQUIVALENCE PARTITIONING_
-
-_Manger BOUNDARY VALUE ANALYSIS og DECISION TABLES_
+[Opgave besvarelser her](https://github.com/bigstepdenmark/testCaseDesignExercise/blob/master/files/TestCaseDesignExercise.pdf)
