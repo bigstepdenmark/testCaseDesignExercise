@@ -3,7 +3,7 @@ import java.time.YearMonth;
 
 public class Controller
 {
-    // Ex. EQUIVALENCE PARTITIONING 1.
+    // Ex. EQUIVALENCE PARTITIONING 1..
     public boolean isEven(int number)
     {
         return number > 0 && number <= 1000 && number % 2 == 0;
