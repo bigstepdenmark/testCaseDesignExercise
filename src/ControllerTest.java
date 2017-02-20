@@ -92,26 +92,26 @@ public class ControllerTest
          * EQUIVALENCE PARTITIONING
          ************************************/
         // First invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 0,2017 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 0,0 ) );
 
         // Valid partition
         assertSame( 31, Controller.getNumDaysinMonth( 1,2017 ) );
 
         // Last invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 13,2017 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 13,100000 ) );
 
         /************************************
          * BOUNDARY VALUE ANALYSIS
          ************************************/
         // First invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 0,2017 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 0,0 ) );
 
         // Valid partition
-        assertSame( 31, Controller.getNumDaysinMonth( 1,2017 ) );
+        assertSame( 31, Controller.getNumDaysinMonth( 1,1975 ) );
         assertSame( 31, Controller.getNumDaysinMonth( 12,2017 ) );
 
         // Last invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 13,2017 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 13,100000 ) );
     }
 
 }
