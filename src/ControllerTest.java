@@ -24,11 +24,27 @@ public class ControllerTest
     @org.junit.Test
     public void isEven() throws Exception
     {
+        /************************************
+         * EQUIVALENCE PARTITIONING
+         ************************************/
         // First invalid partition
         assertEquals( false, ctrl.isEven( 0 ) );
 
         // Valid partition
         assertEquals( true, ctrl.isEven( 500 ) );
+
+        // Last invalid partition
+        assertEquals( false, ctrl.isEven( 1001 ) );
+
+        /************************************
+         * BOUNDARY VALUE ANALYSIS
+         ************************************/
+        // First invalid partition
+        assertEquals( false, ctrl.isEven( 0 ) );
+
+        // Valid partition
+        assertEquals( false, ctrl.isEven( 1 ) );
+        assertEquals( true, ctrl.isEven( 1000 ) );
 
         // Last invalid partition
         assertEquals( false, ctrl.isEven( 1001 ) );
@@ -40,11 +56,27 @@ public class ControllerTest
     @org.junit.Test
     public void checkSalary() throws Exception
     {
+        /************************************
+         * EQUIVALENCE PARTITIONING
+         ************************************/
         // First invalid partition
         assertEquals( false, ctrl.checkSalary( 0 ) );
 
         // Valid partition
         assertEquals( true, ctrl.checkSalary( 1000 ) );
+
+        // Last invalid partition
+        assertEquals( false, ctrl.checkSalary( 75001 ) );
+
+        /************************************
+         * BOUNDARY VALUE ANALYSIS
+         ************************************/
+        // First invalid partition
+        assertEquals( false, ctrl.checkSalary( 0 ) );
+
+        // Valid partition
+        assertEquals( true, ctrl.checkSalary( 1000 ) );
+        assertEquals( true, ctrl.checkSalary( 75000 ) );
 
         // Last invalid partition
         assertEquals( false, ctrl.checkSalary( 75001 ) );
@@ -56,11 +88,27 @@ public class ControllerTest
     @org.junit.Test
     public void getNumDaysinMonth() throws Exception
     {
+        /************************************
+         * EQUIVALENCE PARTITIONING
+         ************************************/
         // First invalid partition
         assertSame( 0, Controller.getNumDaysinMonth( 0,2017 ) );
 
         // Valid partition
         assertSame( 31, Controller.getNumDaysinMonth( 1,2017 ) );
+
+        // Last invalid partition
+        assertSame( 0, Controller.getNumDaysinMonth( 13,2017 ) );
+
+        /************************************
+         * BOUNDARY VALUE ANALYSIS
+         ************************************/
+        // First invalid partition
+        assertSame( 0, Controller.getNumDaysinMonth( 0,2017 ) );
+
+        // Valid partition
+        assertSame( 31, Controller.getNumDaysinMonth( 1,2017 ) );
+        assertSame( 31, Controller.getNumDaysinMonth( 12,2017 ) );
 
         // Last invalid partition
         assertSame( 0, Controller.getNumDaysinMonth( 13,2017 ) );
