@@ -28,26 +28,26 @@ public class ControllerTest
          * EQUIVALENCE PARTITIONING
          ************************************/
         // First invalid partition
-        assertEquals( false, ctrl.isEven( 0 ) );
+        assertFalse( ctrl.isEven( 0 ) );
 
         // Valid partition
-        assertEquals( true, ctrl.isEven( 500 ) );
+        assertTrue( ctrl.isEven( 500 ) );
 
         // Last invalid partition
-        assertEquals( false, ctrl.isEven( 1001 ) );
+        assertFalse( ctrl.isEven( 1001 ) );
 
         /************************************
          * BOUNDARY VALUE ANALYSIS
          ************************************/
         // First invalid partition
-        assertEquals( false, ctrl.isEven( 0 ) );
+        assertFalse( ctrl.isEven( 0 ) );
 
         // Valid partition
-        assertEquals( false, ctrl.isEven( 1 ) );
-        assertEquals( true, ctrl.isEven( 1000 ) );
+        assertFalse( ctrl.isEven( 1 ) );
+        assertTrue( ctrl.isEven( 1000 ) );
 
         // Last invalid partition
-        assertEquals( false, ctrl.isEven( 1001 ) );
+        assertFalse( ctrl.isEven( 1001 ) );
     }
 
     /**
@@ -60,26 +60,26 @@ public class ControllerTest
          * EQUIVALENCE PARTITIONING
          ************************************/
         // First invalid partition
-        assertEquals( false, ctrl.checkSalary( 0 ) );
+        assertFalse( ctrl.checkSalary( 0 ) );
 
         // Valid partition
-        assertEquals( true, ctrl.checkSalary( 1000 ) );
+        assertTrue( ctrl.checkSalary( 1000 ) );
 
         // Last invalid partition
-        assertEquals( false, ctrl.checkSalary( 75001 ) );
+        assertFalse( ctrl.checkSalary( 75001 ) );
 
         /************************************
          * BOUNDARY VALUE ANALYSIS
          ************************************/
         // First invalid partition
-        assertEquals( false, ctrl.checkSalary( 0 ) );
+        assertFalse( ctrl.checkSalary( 0 ) );
 
         // Valid partition
-        assertEquals( true, ctrl.checkSalary( 1000 ) );
-        assertEquals( true, ctrl.checkSalary( 75000 ) );
+        assertTrue( ctrl.checkSalary( 1000 ) );
+        assertTrue( ctrl.checkSalary( 75000 ) );
 
         // Last invalid partition
-        assertEquals( false, ctrl.checkSalary( 75001 ) );
+        assertFalse( ctrl.checkSalary( 75001 ) );
     }
 
     /**
@@ -92,26 +92,26 @@ public class ControllerTest
          * EQUIVALENCE PARTITIONING
          ************************************/
         // First invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 0, 0 ) );
+        assertEquals( 0, Controller.getNumDaysinMonth( 0, 0 ) );
 
         // Valid partition
-        assertSame( 31, Controller.getNumDaysinMonth( 1, 2017 ) );
+        assertEquals( 31, Controller.getNumDaysinMonth( 1, 2017 ) );
 
         // Last invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 13, 100000 ) );
+        assertEquals( 0, Controller.getNumDaysinMonth( 13, 100000 ) );
 
         /************************************
          * BOUNDARY VALUE ANALYSIS
          ************************************/
         // First invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 0, 0 ) );
+        assertEquals( 0, Controller.getNumDaysinMonth( 0, 0 ) );
 
         // Valid partition
-        assertSame( 31, Controller.getNumDaysinMonth( 1, 1975 ) );
-        assertSame( 31, Controller.getNumDaysinMonth( 12, 2017 ) );
+        assertEquals( 31, Controller.getNumDaysinMonth( 1, 1975 ) );
+        assertEquals( 31, Controller.getNumDaysinMonth( 12, 2017 ) );
 
         // Last invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 13, 100000 ) );
+        assertEquals( 0, Controller.getNumDaysinMonth( 13, 100000 ) );
     }
 
     /**
@@ -121,13 +121,13 @@ public class ControllerTest
     public void getReimbursePercentage() throws Exception
     {
         // First invalid partition
-        assertSame( 0, ctrl.getReimbursePercentage( false, true, true ) );
+        assertEquals( 0, ctrl.getReimbursePercentage( false, true, true ) );
 
         // Valid partition
-        assertSame( 50, ctrl.getReimbursePercentage( true, true, false ) );
+        assertEquals( 50, ctrl.getReimbursePercentage( true, true, false ) );
 
         // Last invalid partition
-        assertSame( 0, ctrl.getReimbursePercentage( true, true, true ) );
+        assertEquals( 0, ctrl.getReimbursePercentage( true, true, true ) );
     }
 
     /**
