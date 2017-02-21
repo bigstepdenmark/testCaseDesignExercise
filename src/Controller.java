@@ -25,4 +25,32 @@ class Controller
             return 0;
         }
     }
+
+    int getReimbursePercentage(boolean isDeductiblePaid, boolean doctorVisit, boolean hospitalVisit)
+    {
+        if( isDeductiblePaid )
+        {
+            if( doctorVisit && !hospitalVisit )
+            {
+                return 50;
+            }
+            else if( !doctorVisit && hospitalVisit )
+            {
+                return 80;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * Used Gregorian calendar (start 1582)
+     */
+    boolean isLeapYear(int year)
+    {
+        return year >= 1582 && ( ( year % 4 == 0 && year % 100 != 0 ) || ( year % 400 == 0 ) );
+    }
 }

@@ -92,26 +92,57 @@ public class ControllerTest
          * EQUIVALENCE PARTITIONING
          ************************************/
         // First invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 0,0 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 0, 0 ) );
 
         // Valid partition
-        assertSame( 31, Controller.getNumDaysinMonth( 1,2017 ) );
+        assertSame( 31, Controller.getNumDaysinMonth( 1, 2017 ) );
 
         // Last invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 13,100000 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 13, 100000 ) );
 
         /************************************
          * BOUNDARY VALUE ANALYSIS
          ************************************/
         // First invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 0,0 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 0, 0 ) );
 
         // Valid partition
-        assertSame( 31, Controller.getNumDaysinMonth( 1,1975 ) );
-        assertSame( 31, Controller.getNumDaysinMonth( 12,2017 ) );
+        assertSame( 31, Controller.getNumDaysinMonth( 1, 1975 ) );
+        assertSame( 31, Controller.getNumDaysinMonth( 12, 2017 ) );
 
         // Last invalid partition
-        assertSame( 0, Controller.getNumDaysinMonth( 13,100000 ) );
+        assertSame( 0, Controller.getNumDaysinMonth( 13, 100000 ) );
     }
 
+    /**
+     * Test the reimbursed percentage the client get
+     */
+    @org.junit.Test
+    public void getReimbursePercentage() throws Exception
+    {
+        // First invalid partition
+        assertSame( 0, ctrl.getReimbursePercentage( false, true, true ) );
+
+        // Valid partition
+        assertSame( 50, ctrl.getReimbursePercentage( true, true, false ) );
+
+        // Last invalid partition
+        assertSame( 0, ctrl.getReimbursePercentage( true, true, true ) );
+    }
+
+    /**
+     * Test the given year is leap year
+     */
+    @org.junit.Test
+    public void isLeapYear() throws Exception
+    {
+        // First invalid partition
+        assertFalse( ctrl.isLeapYear( 0 ) );
+
+        // Valid partition
+        assertTrue( ctrl.isLeapYear( 2000 ) );
+
+        // Last invalid partition
+        assertFalse( ctrl.isLeapYear( 5555 ) );
+    }
 }
